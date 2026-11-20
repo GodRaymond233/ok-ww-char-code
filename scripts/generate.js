@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const { execSync } = require('child_process');
+const { execFileSync } = require('child_process');
 const AdmZip = require('adm-zip');
 
 const ROOT_DIR = path.resolve(__dirname, '..');
@@ -16,7 +16,7 @@ const BASE_URL = `https://${BASE_DOMAIN}/workshop`;
 function getGitCommitTimestamp(filePath) {
   try {
     const relPath = path.relative(ROOT_DIR, filePath).replace(/\\/g, '/');
-    const stdout = execSync(`git log -1 --format=%ct -- "${relPath}"`, {
+    const stdout = execFileSync('git', ['log', '-1', '--format=%ct', '--', relPath], {
       cwd: ROOT_DIR,
       encoding: 'utf8',
       stdio: ['pipe', 'pipe', 'ignore']
@@ -114,7 +114,7 @@ function parseZipFiles() {
       .map(m => m.trim())
       .filter(Boolean);
 
-    const encodedFileName = encodeURIComponent(file);
+    const encodedFileName = encodeURIComponent(file).replace(/'/g, '%27');
     const timestamp = getGitCommitTimestamp(zipPath);
 
     results.push({
@@ -164,7 +164,8 @@ function groupDataByTeam(items) {
 }
 
 function generateHtml(teamsGrouped, allItems, repoName) {
-  const teamsList = Object.values(teamsGrouped);
+  const escape = value => value.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+  const teamsList = JSON.parse(JSON.stringify(Object.values(teamsGrouped)), (key, value) => typeof value === 'string' ? escape(value) : value);
   const totalCodes = allItems.length;
   const totalTeams = teamsList.length;
 
@@ -955,7 +956,7 @@ function main() {
 
   // 5. Generate root index.html
   const htmlContent = generateHtml(groupedTeams, rawItems, repo);
-  fs.writeFileSync(INDEX_HTML_PATH, htmlContent, 'utf8');
+  fs.writeFileSync(INDEX_HTML_PATH, htmlContent.replace(/[ \t]+$/gm, ''), 'utf8');
   console.log(`[OK] Generated static page: index.html`);
 
   console.log('--- Static Generation Completed Successfully ---');
