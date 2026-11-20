@@ -8,10 +8,10 @@ const CODES_DIR = path.join(ROOT_DIR, 'codes');
 const TEAMS_DIR = path.join(ROOT_DIR, 'teams');
 const TEAMS_JSON_PATH = path.join(ROOT_DIR, 'teams.json');
 const INDEX_HTML_PATH = path.join(ROOT_DIR, 'index.html');
-const CNAME_PATH = path.join(ROOT_DIR, 'CNAME');
+const { createHash } = require('crypto');
 
-const BASE_DOMAIN = 'okwwcharcode.ok-script.com';
-const BASE_URL = `https://${BASE_DOMAIN}`;
+const BASE_DOMAIN = 's2a.godraymond.com';
+const BASE_URL = `https://${BASE_DOMAIN}/workshop`;
 
 function getGitCommitTimestamp(filePath) {
   try {
@@ -77,7 +77,7 @@ function parseZipFiles() {
   }
 
   const files = fs.readdirSync(CODES_DIR);
-  const zipFiles = files.filter(f => f.toLowerCase().endsWith('.zip'));
+  const zipFiles = files.filter(f => f.toLowerCase().endsWith('.zip')).sort();
 
   console.log(`[INFO] Found ${zipFiles.length} zip files in codes/`);
 
@@ -121,7 +121,8 @@ function parseZipFiles() {
       filename: file,
       downloadUrl: `${BASE_URL}/codes/${encodedFileName}`,
       relativePath: `codes/${encodedFileName}`,
-      rawUrl: `https://raw.githubusercontent.com/${getGithubRepo()}/main/codes/${encodedFileName}`,
+      rawUrl: `${BASE_URL}/codes/${encodedFileName}`,
+      sha256: createHash('sha256').update(fs.readFileSync(zipPath)).digest('hex'),
       name,
       author,
       version,
@@ -886,10 +887,6 @@ function main() {
   const rawItems = parseZipFiles();
   const groupedTeams = groupDataByTeam(rawItems);
 
-  // 1. Ensure CNAME exists
-  fs.writeFileSync(CNAME_PATH, `${BASE_DOMAIN}\n`, 'utf8');
-  console.log(`[OK] Configured CNAME: ${BASE_DOMAIN}`);
-
   // 2. Ensure teams directory exists and clean old files
   if (fs.existsSync(TEAMS_DIR)) {
     for (const f of fs.readdirSync(TEAMS_DIR)) {
@@ -916,6 +913,7 @@ function main() {
         filename: c.filename,
         downloadUrl: c.downloadUrl,
         rawUrl: c.rawUrl,
+        sha256: c.sha256,
         name: c.name,
         description: c.description,
         author: c.author,
