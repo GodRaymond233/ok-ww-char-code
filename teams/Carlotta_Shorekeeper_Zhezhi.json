@@ -1,0 +1,33 @@
+{
+  "team": "Carlotta, Shorekeeper, Zhezhi",
+  "slug": "Carlotta_Shorekeeper_Zhezhi",
+  "members": [
+    "Carlotta",
+    "Shorekeeper",
+    "Zhezhi"
+  ],
+  "totalCodes": 1,
+  "jsonUrl": "https://s2a.godraymond.com/workshop/teams/Carlotta_Shorekeeper_Zhezhi.json",
+  "codes": [
+    {
+      "filename": "珂折守_矩阵低充轴_笑嘻Biss_1.0.1.zip",
+      "downloadUrl": "https://s2a.godraymond.com/workshop/codes/%E7%8F%82%E6%8A%98%E5%AE%88_%E7%9F%A9%E9%98%B5%E4%BD%8E%E5%85%85%E8%BD%B4_%E7%AC%91%E5%98%BBBiss_1.0.1.zip",
+      "rawUrl": "https://s2a.godraymond.com/workshop/codes/%E7%8F%82%E6%8A%98%E5%AE%88_%E7%9F%A9%E9%98%B5%E4%BD%8E%E5%85%85%E8%BD%B4_%E7%AC%91%E5%98%BBBiss_1.0.1.zip",
+      "sha256": "8254047de41b493bb7a1e40ed9e51928568a3c6bdf2f98d5ca160145a70eb91a",
+      "name": "珂折守 矩阵低充轴",
+      "description": "【说明】\n1. 珂折守（珂莱塔 / 折枝 / 守岸人）矩阵低充无缝轴，一号位折枝开局；首轮与循环按交场链执行，唯一 f→s 边是珂 f3 → 折 s1。\n2. 折枝测试使用脱手声骸（赫卡忒或梦魇冰蚊子），暗鸟未测试（大概率不适配）。\n3. 低充能需求：珂 107%+、折 127%+；0+1 队伍，编队 1 折 / 2 守 / 3 珂。\n4. 适用深塔与矩阵。\n5. 调参入口：3a 后窗口不够（I42）加到 0.55；3 鹤 2.7 窗口少段回 3.0（I43）。",
+      "author": "笑嘻Biss",
+      "version": "1.0.1",
+      "team": "Carlotta, Shorekeeper, Zhezhi",
+      "members": [
+        "Carlotta",
+        "Shorekeeper",
+        "Zhezhi"
+      ],
+      "size": 33061,
+      "sizeFormatted": "32.29 KB",
+      "timestamp": 1795765950,
+      "modifiedAt": "2026-11-27T07:52:30.000Z"
+    }
+  ]
+}

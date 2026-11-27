@@ -1,0 +1,33 @@
+{
+  "team": "Changli, Hiyuki, Jinhsi",
+  "slug": "Changli_Hiyuki_Jinhsi",
+  "members": [
+    "Changli",
+    "Hiyuki",
+    "Jinhsi"
+  ],
+  "totalCodes": 1,
+  "jsonUrl": "https://s2a.godraymond.com/workshop/teams/Changli_Hiyuki_Jinhsi.json",
+  "codes": [
+    {
+      "filename": "Changli_Hiyuki_Jinhsi_楽山_1.3.2.zip",
+      "downloadUrl": "https://s2a.godraymond.com/workshop/codes/Changli_Hiyuki_Jinhsi_%E6%A5%BD%E5%B1%B1_1.3.2.zip",
+      "rawUrl": "https://s2a.godraymond.com/workshop/codes/Changli_Hiyuki_Jinhsi_%E6%A5%BD%E5%B1%B1_1.3.2.zip",
+      "sha256": "f5d6959255115599068ea703876ad09418e920ffd2e2862fec3c44e267c52fb4",
+      "name": "Changli, Hiyuki, Jinhsi",
+      "description": "龙凤雪·今汐长离绯雪（视频：ImmortalRover「龙凤雪慢放招式配文字轴」+ 正常速度版「三个主c开始合轴」及其完整文字轴）\n持宏：长离。开局（或按 F 重开）先跑启动 40 格，之后按文字轴打 循环1 → 循环2 → 循环3（每段以绯雪归刃收尾，打完没脱战再从循环1 转），脱战才停\n编队建议 1今汐 2长离 3绯雪（宏按角色找人，不强制）\n处决：轴上有 F 提示才按；不想让宏按就把 Changli.py 里 USE_AUTO_F_BREAK 改成 False",
+      "author": "楽山",
+      "version": "1.3.2",
+      "team": "Changli, Hiyuki, Jinhsi",
+      "members": [
+        "Changli",
+        "Hiyuki",
+        "Jinhsi"
+      ],
+      "size": 72674,
+      "sizeFormatted": "70.97 KB",
+      "timestamp": 1795765961,
+      "modifiedAt": "2026-11-27T07:52:41.000Z"
+    }
+  ]
+}

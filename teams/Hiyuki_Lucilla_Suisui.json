@@ -6,7 +6,7 @@
     "Lucilla",
     "Suisui"
   ],
-  "totalCodes": 5,
+  "totalCodes": 6,
   "jsonUrl": "https://s2a.godraymond.com/workshop/teams/Hiyuki_Lucilla_Suisui.json",
   "codes": [
     {
@@ -108,6 +108,26 @@
       "sizeFormatted": "21.11 KB",
       "timestamp": 1787153724,
       "modifiedAt": "2026-08-19T15:35:24.000Z"
+    },
+    {
+      "filename": "绯洛穗_0链绯雪_长按封顶优化_笑嘻Biss_1.0.4.zip",
+      "downloadUrl": "https://s2a.godraymond.com/workshop/codes/%E7%BB%AF%E6%B4%9B%E7%A9%97_0%E9%93%BE%E7%BB%AF%E9%9B%AA_%E9%95%BF%E6%8C%89%E5%B0%81%E9%A1%B6%E4%BC%98%E5%8C%96_%E7%AC%91%E5%98%BBBiss_1.0.4.zip",
+      "rawUrl": "https://s2a.godraymond.com/workshop/codes/%E7%BB%AF%E6%B4%9B%E7%A9%97_0%E9%93%BE%E7%BB%AF%E9%9B%AA_%E9%95%BF%E6%8C%89%E5%B0%81%E9%A1%B6%E4%BC%98%E5%8C%96_%E7%AC%91%E5%98%BBBiss_1.0.4.zip",
+      "sha256": "54a8ff61bd40258cb9f2916c257b3f1a72dea2d158af3808f6ceb33682319d99",
+      "name": "绯洛穗 0链绯雪 长按封顶优化",
+      "description": "【说明】\n1. 基于 1.0.3 继续修「R1 前重击后多打普攻」：回退 v2/v3 的检测改动（判断前抓帧、盯回路图标、pre_lib_heavy_done），改成减少单次长按时间。\n2. 做法：hold_attack_until_lib 单次按住封顶 HEAVY_HOLD_MAX=2.8 秒 → 松手 → 只轮询 R、不按任何键（wait_lib_quiet，上限 2.5 秒）→ 等不到 R 再按下一轮。\n3. 松手落在重击起手后、重击结束前约 1.8 秒，重击后摇结束时手上没有攻击输入，不会接普攻；R 亮起再按 R1。\n4. 参数敏感：重击后仍多 A 就把 HEAVY_HOLD_MAX 调到 2.6/2.4；R1 变慢或重击打不出就调到 3.0 以上。空手入场（无心念）会多按 1–2 轮，属预期。\n5. 保留 0 链 4 刀路线（启动轴 + 循环轴）；Lucilla.py / Suisui.py 未改。",
+      "author": "笑嘻Biss",
+      "version": "1.0.4",
+      "team": "Hiyuki, Lucilla, Suisui",
+      "members": [
+        "Hiyuki",
+        "Lucilla",
+        "Suisui"
+      ],
+      "size": 38885,
+      "sizeFormatted": "37.97 KB",
+      "timestamp": 1795765947,
+      "modifiedAt": "2026-11-27T07:52:27.000Z"
     }
   ]
 }
